@@ -112,12 +112,12 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_hongkong.png"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_icon.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_icon.png"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_icon.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_icon.png"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/login_welcome.png",

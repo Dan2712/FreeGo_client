@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.freego.homepage.HomepageActivity">
+    tools:context=".activity.homepage.HomepageActivity">
 
     <FrameLayout
         android:id="@+id/framelayout1"
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.freego.homepage.CircleImageView
+            <com.freego.activity.homepage.CircleImageView
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="17dp"
