@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/login_welcome"
+    tools:context="com.freego.LoginActivity">
+
+    <LinearLayout
+        android:layout_marginTop="190dp"
+        android:layout_gravity="bottom|center"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_margin="6dp"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:text="Username/Email:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/usernameInput"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColorHint="#a9a9a9"
+            android:hint="Username or Email"
+            android:singleLine="true"
+            android:background="#359C87"
+            android:layout_width="250dp"
+            android:layout_height="35dp" />
+
+        <TextView
+            android:layout_margin="6dp"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:text="Password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/passwordInput"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColorHint="#a9a9a9"
+            android:hint="Enter password"
+            android:inputType="textPassword"
+            android:background="#359C87"
+            android:layout_width="250dp"
+            android:layout_height="35dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:id="@+id/framelayoutLogin"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:id="@+id/login"
+                    android:background="@drawable/login_button"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp" />
+                <TextView
+                    android:textColor="#FFFFFFFF"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:text="Log in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:id="@+id/signup"
+                    android:background="@drawable/login_button"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp" />
+                <TextView
+                    android:textColor="#FFFFFFFF"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:text="Sign up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+        </LinearLayout>
+        <TextView
+            android:textSize="10sp"
+            android:text="Forget password?"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>
