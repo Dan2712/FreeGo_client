@@ -5,34 +5,29 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.homepage.HomepageActivity">
+    tools:context=".activity.HomepageActivity">
 
     <FrameLayout
-        android:id="@+id/framelayout1"
+        android:id="@+id/homepage_framelayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <FrameLayout
-            android:id="@+id/framelayout"
+            android:id="@+id/homepage_frameLayout1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
-
-            <ListView
-                android:id="@+id/placeListview"
+            <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:id="@+id/homepage_recycler_view"
+                android:scrollbars="vertical"/>
 
-            </ListView>
-
-            <SearchView
-                android:layout_marginTop="20dp"
-                android:queryHint="MOVE NOW"
+            <com.freego.view.Homepage_ViewSearch
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/searchView"
-                android:layout_alignParentTop="true"
-                android:background="#60000000"/>
+                android:id="@+id/homepage_search_view"
+                android:layout_marginTop="4.5dp"/>
 
         </FrameLayout>
 
@@ -42,14 +37,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.freego.activity.homepage.CircleImageView
+            <com.freego.view.CircleImageView
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="17dp"
                 android:layout_width="62dp"
                 android:layout_height="50dp"
                 android:id="@+id/circleImageView"
-                android:src="@drawable/homepage_icon"
+                android:src="@drawable/default_avatar"
                 app:border_width="4dp"
                 app:border_color="#ffffffff"
                 android:layout_alignParentTop="true"/>

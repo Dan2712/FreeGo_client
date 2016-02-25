@@ -1,7 +1,5 @@
 package com.freego.util;
 
-import android.util.Log;
-
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -12,21 +10,18 @@ import java.net.URL;
  */
 public class HttpUtil {
 
-    private static final String ROOT_URL = "http://10.0.2.2:8080/freego/";
-
     private static HttpURLConnection connection = null;
 
     private static URL mUrl;
 
-    public static HttpURLConnection getConnection_HttpFileUtil(String pageAction) {
+    public static HttpURLConnection getConnection(String url) {
 
         try {
-            mUrl = new URL(ROOT_URL + pageAction);
-            Log.d("url", ROOT_URL + pageAction);
+            mUrl = new URL(url);
             connection = (HttpURLConnection) mUrl.openConnection();
             connection.setRequestMethod("POST");
-            connection.setConnectTimeout(8000);
-            connection.setReadTimeout(8000);
+            connection.setConnectTimeout(20000);
+            connection.setReadTimeout(20000);
             connection.setUseCaches(false);
             connection.setDoInput(true);
             connection.setDoOutput(true);
