@@ -1,31 +1,35 @@
 [
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_alert_dialog_material.xml"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_media.xml"
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_alert_dialog_material.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/notification_template_lines.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_lines.xml"
     },
     {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_media.xml"
+    },
+    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_bar_up_container.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/activity_hotel_page.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/activity_hotel_page.xml"
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/activity_hostinfo.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/activity_hostinfo.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/signup_bottom.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/signup_bottom.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/activity_hotel_page.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/activity_hotel_page.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
@@ -36,12 +40,16 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_simple.xml"
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/homepage_adapter_note_title.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/homepage_adapter_note_title.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_simple.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
@@ -56,12 +64,12 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/fragment_signup.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/select_dialog_item_material.xml"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/activity_hotellist.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/activity_hotellist.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/select_dialog_item_material.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
@@ -72,28 +80,32 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_alert_dialog_button_bar_material.xml"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/hotellist_adapter_list.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/hotellist_adapter_list.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_alert_dialog_button_bar_material.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/homepage_adapter_image.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/homepage_adapter_image.xml"
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/homepage_adapter_note_style.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/homepage_adapter_note_style.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_list_menu_item_radio.xml"
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/homepage_adapter_column_style.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/homepage_adapter_column_style.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/hint_layout.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/hint_layout.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_list_menu_item_radio.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
@@ -108,16 +120,20 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_list_menu_item_checkbox.xml"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_part_time.xml"
     },
     {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/homepage_adapter_destination_style.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/homepage_adapter_destination_style.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
@@ -132,12 +148,12 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/homepage_view_search.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/homepage_view_search.xml"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/activity_homepage.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/activity_homepage.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/homepage_view_search.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/homepage_view_search.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/notification_media_cancel_action.xml",
@@ -156,40 +172,40 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/select_dialog_multichoice_material.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_list_menu_item_icon.xml"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_list_menu_item_icon.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/activity_welcome.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/activity_welcome.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/select_dialog_singlechoice_material.xml"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/homepage_hint.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/layout/homepage_hint.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_content_include.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_search_view.xml"
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_big_media.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_big_media.xml"
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_search_view.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",

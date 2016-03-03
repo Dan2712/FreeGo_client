@@ -26,9 +26,6 @@ import com.freego.R;
 import com.freego.activity.HomepageActivity;
 import com.freego.app.GlobalApplication;
 
-/**
- * Created by henryye on 2/23/16.
- */
 public class SignupFragment extends Fragment implements View.OnClickListener, View.OnFocusChangeListener{
 
     private static final int TOAST_DUPLI = 0;
@@ -151,7 +148,10 @@ public class SignupFragment extends Fragment implements View.OnClickListener, Vi
         switch (v.getId()) {
             case R.id.signup_submit:
                 String name_check = nameText.getText().toString();
-                boolean checked = typeSelect.isSelected();
+                boolean checked =false;
+                if (hostSelected.isSelected() || voluneerSelected.isSelected())
+                    checked = true;
+
                 if (mailText.getText().toString().matches(MAIL_FORMAT) && pwdText.getText().toString().equals(pwdCfmText.getText().toString())
                         && !name_check.equals("") && checked) {
                     new Thread(new Runnable() {

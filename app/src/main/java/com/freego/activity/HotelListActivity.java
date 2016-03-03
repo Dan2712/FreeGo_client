@@ -1,11 +1,18 @@
 package com.freego.activity;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Filter;
@@ -16,10 +23,25 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVFile;
+import com.avos.avoscloud.AVObject;
+import com.avos.avoscloud.AVQuery;
+import com.avos.avoscloud.GetDataCallback;
 import com.freego.R;
 import com.freego.adapter.HotelList_ListView_adapter;
 import com.freego.bean.ImageHotel;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -33,7 +55,11 @@ public class HotelListActivity extends Activity {
 
     private static final int NoGenderChosen = 0;
 
-    private ArrayList<ImageHotel> places = new ArrayList<ImageHotel>();
+    private static final int IMAGE_DOWN = 3;
+
+    private ArrayList<ImageHotel> hotels = new ArrayList<ImageHotel>();
+
+    private String destination;
 
     private ListView places_image;
 
@@ -83,11 +109,34 @@ public class HotelListActivity extends Activity {
 
     private boolean flag = false;
 
+    private HotelList_ListView_adapter filterAdapter;
+
+    private ArrayList<String> imagesId = new ArrayList<>();
+
+    private Bitmap bitmap;
+
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case IMAGE_DOWN:
+                    filterAdapter.notifyDataSetChanged();
+                    break;
+            }
+        }
+    };
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_hotellist);
+
+        Intent intent = getIntent();
+        destination = intent.getStringExtra("destination");
+
+        new DownloadImages().execute();
 
         week2 = (EditText)findViewById(R.id.weekTo);
         week1 = (EditText)findViewById(R.id.weekFrom);
@@ -104,17 +153,23 @@ public class HotelListActivity extends Activity {
         year_start = (Spinner)findViewById(R.id.spinnerYearFrom);
         month_start = (Spinner)findViewById(R.id.spinnerMonthFrom);
 
-
-        iniPlaces();
+        initHotels();
         months = getResources().getStringArray(R.array.months);
         years = getResources().getStringArray(R.array.years);
         year_start.setSelection(setInitialDate(rightnow.get(Calendar.YEAR), years)+1);
         month_start.setSelection(setInitialDate(rightnow.get(Calendar.MONTH), months) + 2);
-        final HotelList_ListView_adapter filterAdapter = new HotelList_ListView_adapter(this, places);
+        filterAdapter = new HotelList_ListView_adapter(this, hotels);
         filter = filterAdapter.getFilter();
         places_image.setAdapter(filterAdapter);
         search.setImageResource(R.drawable.public_search);
 
+        places_image.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent1 = new Intent(HotelListActivity.this, HostInfoActivity.class);
+                startActivity(intent1);
+            }
+        });
         //全部空值的话，设置关掉drawer， 绑定一个输入了，另一个就必须输入
         confirm.setOnClickListener(new View.OnClickListener() {
 
@@ -228,23 +283,43 @@ public class HotelListActivity extends Activity {
         return 1;
     }
 
-    public void iniPlaces(){
-        ImageHotel bj = new ImageHotel(R.drawable.aaa,"Sala Old Town Singharat Road","ChengDu, SiChuan Province", 1, 4, 1609);
+    private void initHotels(){
+        File file = new File(getFilesDir() + File.separator + "hotels" + File.separator + destination);
+        File[] files = file.listFiles();
+        FileInputStream inputStream = null;
+        BufferedReader reader = null;
+        JSONObject jsonObject = null;
 
-        places.add(bj);
-        ImageHotel hk = new ImageHotel(R.drawable.aab,"Amaka Deluxe 3A","ChangSha ,HuNan Province", 2, 7, 1702);
-        places.add(hk);
-        ImageHotel hn = new ImageHotel(R.drawable.aac,"condo near nimmana","BaoA, ShenZhen", 1, 4, 1711);
-        places.add(hn);
-        ImageHotel sh = new ImageHotel(R.drawable.aad,"Great nice location","Kowloon Bay, HongKong", 2, 5, 1610);
-        places.add(sh);
-        ImageHotel tw = new ImageHotel(R.drawable.aae,"Swim Pool, MR","WenZhou, ZheJiang Province", 1, 2, 1711);
-        places.add(tw);
-        ImageHotel xz = new ImageHotel(R.drawable.aaf,"Just Seoul Stn.","HuHeHaoTe, NeiMengGu Province", 0, 6, 1705);
-        places.add(xz);
-        ImageHotel yn = new ImageHotel(R.drawable.aag,"QueenBedRoom","GuangZhou, GuangDong Province", 2, 8, 1812);
-        places.add(yn);
+        try {
+            for (int i = 0; i < files.length; i++) {
+                inputStream = new FileInputStream(files[i] + File.separator + files[i].getName() + ".txt");
+                reader = new BufferedReader(new InputStreamReader(inputStream));
+                String content = "";
 
+                while ((content = reader.readLine()) != null) {
+                    jsonObject = new JSONObject(content.toString());
+                    JSONObject imageObject = jsonObject.getJSONObject("image");
+                    String imageId = imageObject.getString("objectId");
+                    imagesId.add(imageId);
+                    ImageHotel imageHotel = new ImageHotel(null, jsonObject.getString("hotelName"), jsonObject.getString("region")
+                            , jsonObject.getInt("requireSex"), jsonObject.getInt("requireNumber"), jsonObject.getInt("startDate"));
+                    hotels.add(imageHotel);
+                }
+            }
+        } catch (FileNotFoundException e1) {
+            e1.printStackTrace();
+        } catch (IOException e2) {
+            e2.printStackTrace();
+        } catch (JSONException e3) {
+            e3.printStackTrace();
+        } finally {
+            if (reader != null)
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        }
     }
 
     public boolean judgeCondition(){
@@ -257,6 +332,53 @@ public class HotelListActivity extends Activity {
         }else {
             return false;
         }
+    }
 
+    class DownloadImages extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... params) {
+
+            for (int i=0; i<imagesId.size(); i++) {
+                AVQuery<AVObject> query = new AVQuery<>("image");
+                AVObject image;
+                try {
+                    image = query.get(imagesId.get(i));
+                    final int finalI = i;
+
+                    AVFile image_down = image.getAVFile("image1");
+                    if (image_down != null) {
+                        final int finalI1 = i;
+                        image_down.getDataInBackground(new GetDataCallback() {
+                            @Override
+                            public void done(byte[] bytes, AVException e) {
+                                if (e == null) {
+                                    bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                                    hotels.get(finalI1).setImage(bitmap);
+
+                                    Message msg = new Message();
+                                    msg.what = IMAGE_DOWN;
+                                    handler.sendMessage(msg);
+
+                                    try {
+                                        File file = new File("data/data/com.freego/files/hotels/" + destination
+                                                + File.separator + hotels.get(finalI).getHotelName() + File.separator + "image1");
+                                        FileOutputStream fileOutputStream = new FileOutputStream(file);
+                                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
+                                        fileOutputStream.flush();
+                                        fileOutputStream.close();
+                                    } catch (IOException e1) {
+                                        e1.printStackTrace();
+                                    }
+                                }
+                            }
+                        });
+                    }
+
+                } catch (AVException e) {
+                    e.printStackTrace();
+                }
+            }
+            return null;
+        }
     }
 }

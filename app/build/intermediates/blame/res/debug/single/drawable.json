@@ -4,28 +4,52 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_correct.png"
     },
     {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_note1.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_note1.png"
+    },
+    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_btn_check_material.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_note2.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_note2.png"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/aah.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/aah.png"
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/host02.jpg",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/host02.jpg"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/hostinfo_indicator_focused.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/hostinfo_indicator_focused.png"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/host05.jpg",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/host05.jpg"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_cab_background_top_material.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/aad.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/aad.png"
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/hostinfo_indicator_unfocused.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/hostinfo_indicator_unfocused.png"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_titleback.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_titleback.png"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_button_pressed.jpg",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_button_pressed.jpg"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_call.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_call.png"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_button_unpressed.jpg",
@@ -34,10 +58,6 @@
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_item_background_holo_light.xml"
-    },
-    {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/aaf.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/aaf.png"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
@@ -64,20 +84,8 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_seekbar_track_material.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/aac.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/aac.png"
-    },
-    {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_user.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_user.png"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_list_selector_background_transition_holo_light.xml"
-    },
-    {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_mes.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_mes.png"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
@@ -96,8 +104,12 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_seekbar_thumb_material.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_tunnan.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_tunnan.png"
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_hotel01.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_hotel01.png"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_hotel03.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_hotel03.png"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_search_round.9.png",
@@ -120,24 +132,28 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_btn_radio_material.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/aae.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/aae.png"
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_hot_notes.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_hot_notes.png"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_radiobutton_colors.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_radiobutton_colors.xml"
     },
     {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_hotel02.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_hotel02.png"
+    },
+    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_shanghai.png",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_shanghai.png"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/aag.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/aag.png"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_full_material.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_mark.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_mark.png"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
@@ -148,16 +164,16 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/signup_arrow.png"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_home.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_home.png"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_cab_background_internal_bg.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_button_click.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_button_click.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_message.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_message.png"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
@@ -172,16 +188,12 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_search.png"
     },
     {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_note3.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_note3.png"
+    },
+    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_logo_transparent.png",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_logo_transparent.png"
-    },
-    {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/aab.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/aab.png"
-    },
-    {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_taiwan.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_taiwan.png"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_female.png",
@@ -196,12 +208,12 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/signup_textbackground.9.png"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_icon.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_icon.png"
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/host03.jpg",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/host03.jpg"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_xizhang.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_xizhang.png"
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_sichuan.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_sichuan.png"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
@@ -212,8 +224,20 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/signup_bottom.xml"
     },
     {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_email.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_email.png"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_hot_hotels.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_hot_hotels.png"
+    },
+    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/host01.jpg",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/host01.jpg"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_search_circle.png",
@@ -224,16 +248,24 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
     },
     {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_marked.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_marked.png"
+    },
+    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_login_buttons_click.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_login_buttons_click.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/aaa.png",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/aaa.png"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_male.png",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_male.png"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/homepage_hot_destinations.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/homepage_hot_destinations.png"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/host04.jpg",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/host04.jpg"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
@@ -246,6 +278,10 @@
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/signup_advanced.png",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/signup_advanced.png"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/public_eye.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/drawable/public_eye.png"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_dark.xml",

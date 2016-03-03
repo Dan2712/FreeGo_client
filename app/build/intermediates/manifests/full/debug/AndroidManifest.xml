@@ -29,6 +29,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.freego.activity.HotelListActivity" />
+        <activity android:name="com.freego.activity.HostInfoActivity" />
     </application>
 
 </manifest>

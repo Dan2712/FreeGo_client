@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -20,13 +21,16 @@ import android.widget.AutoCompleteTextView;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVObject;
+import com.avos.avoscloud.AVQuery;
 import com.avos.avoscloud.AVUser;
+import com.avos.avoscloud.FindCallback;
 import com.avos.avoscloud.GetCallback;
 import com.avos.avoscloud.GetDataCallback;
 import com.freego.R;
 import com.freego.adapter.Homepage_RecycleView_adapter;
 import com.freego.app.GlobalApplication;
-import com.freego.bean.ImagePlace;
+import com.freego.bean.HomepageContent;
+import com.freego.util.ProgressUtil;
 import com.freego.view.CircleImageView;
 import com.freego.view.Homepage_ViewSearch;
 
@@ -39,20 +43,25 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomepageActivity extends Activity {
 
     private static final int AVATAR_UPDATE = 0;
 
-    private ArrayList<ImagePlace> places = new ArrayList<ImagePlace>();
+    private static final int INFO_DOWNLOAD = 1;
+
+    private ArrayList<HomepageContent> contents = new ArrayList<HomepageContent>();
 
     private ArrayList<String> hintItems = new ArrayList<String>();
+
+    private String destination;
 
     private CircleImageView circleImageView;
 
     private RecyclerView mRecyclerView;
 
-    private RecyclerView.Adapter mAdapter;
+    private Homepage_RecycleView_adapter mAdapter;
 
     private ArrayAdapter hintAdapter;
 
@@ -86,6 +95,13 @@ public class HomepageActivity extends Activity {
             switch (msg.what) {
                 case AVATAR_UPDATE:
                     circleImageView.setImageBitmap(avatar);
+                    break;
+                case INFO_DOWNLOAD:
+                    Intent intent = new Intent(HomepageActivity.this, HotelListActivity.class);
+                    intent.putExtra("destination", destination);
+                    startActivity(intent);
+                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                    ProgressUtil.dismissProgress();
                     break;
             }
         }
@@ -127,30 +143,54 @@ public class HomepageActivity extends Activity {
         searchBox.setDropDownWidth(600);
         searchBox.setThreshold(1);
 
-        initPlaces();
+        initContents();
         initHintItems();
 
-        mAdapter = new Homepage_RecycleView_adapter(places);
+        mAdapter = new Homepage_RecycleView_adapter(contents);
         mRecyclerView.setAdapter(mAdapter);
+        mAdapter.setOnItemClickListener(new Homepage_RecycleView_adapter.OnRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(View view, final HomepageContent content) {
+                ProgressUtil.showProgress(HomepageActivity.this);
+                try {
+                    destination = content.getImageName();
+                    downloadHotelInfo(content.getImageName());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
         circleImageView = (CircleImageView) findViewById(R.id.circleImageView);
 
         searchBox.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent jump = new Intent(HomepageActivity.this, HotelListActivity.class);
-                startActivity(jump);
-                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                ProgressUtil.showProgress(HomepageActivity.this);
+                try {
+                    destination = hintItems.get(position);
+                    downloadHotelInfo(hintItems.get(position));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
         searchBox.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if(keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN){
-                    Intent jump = new Intent(HomepageActivity.this, HotelListActivity.class);
-                    startActivity(jump);
-                    overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
-                    return true;
+                if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
+                    String contentInput = searchBox.getText().toString();
+                    byte[] items = contentInput.getBytes();
+                    items[0] = (byte)((char)items[0] - ( 'a' - 'A'));
+                    String contentName = new String(items);
+                    ProgressUtil.showProgress(HomepageActivity.this);
+                    destination = contentName;
+                    try {
+                        downloadHotelInfo(contentName);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
                 return false;
             }
@@ -165,31 +205,35 @@ public class HomepageActivity extends Activity {
         new DownloadTask().execute();
     }
 
-    public void initPlaces(){
-        ImagePlace bj = new ImagePlace("BJ", R.drawable.homepage_beijing);
-        places.add(bj);
-        ImagePlace hk = new ImagePlace("hk", R.drawable.homepage_hongkong);
-        places.add(hk);
-        ImagePlace hn = new ImagePlace("hn", R.drawable.homepage_hunan);
-        places.add(hn);
-        ImagePlace sh = new ImagePlace("sh", R.drawable.homepage_shanghai);
-        places.add(sh);
-        ImagePlace tw = new ImagePlace("tw", R.drawable.homepage_taiwan);
-        places.add(tw);
-        ImagePlace xz = new ImagePlace("xz", R.drawable.homepage_xizhang);
-        places.add(xz);
-        ImagePlace yn = new ImagePlace("yn", R.drawable.homepage_tunnan);
-        places.add(yn);
+    private void initContents(){
+        HomepageContent beijing = new HomepageContent("Beijing", R.drawable.homepage_beijing, "city");
+        contents.add(beijing);
+        HomepageContent shanghai = new HomepageContent("Hongkong", R.drawable.homepage_shanghai, "city");
+        contents.add(shanghai);
+        HomepageContent sichuan = new HomepageContent("Hunan", R.drawable.homepage_sichuan, "city");
+        contents.add(sichuan);
+        HomepageContent hotHotel01 = new HomepageContent("hotHotel01", R.drawable.homepage_hotel01, "hotel");
+        contents.add(hotHotel01);
+        HomepageContent hotHotel02 = new HomepageContent("hotHotel02", R.drawable.homepage_hotel02, "hotel");
+        contents.add(hotHotel02);
+        HomepageContent hotHotel03 = new HomepageContent("hotHotel03", R.drawable.homepage_hotel03, "hotel");
+        contents.add(hotHotel03);
+        HomepageContent hotNote01 = new HomepageContent("hotNote01", R.drawable.homepage_note1, "note");
+        contents.add(hotNote01);
+        HomepageContent hotNote02 = new HomepageContent("hotNote02", R.drawable.homepage_note2, "note");
+        contents.add(hotNote02);
+        HomepageContent hotNote03 = new HomepageContent("hotNote03", R.drawable.homepage_note3, "note");
+        contents.add(hotNote03);
 
     }
 
-    public void initHintItems(){
+    private void initHintItems(){
 
         hintItems.add("Hongkong");
         hintItems.add("Hunan");
         hintItems.add("Taiwan");
-        hintItems.add("Shanghai");
-        hintItems.add("Tibet");
+        hintItems.add("shanghai");
+        hintItems.add("tibet");
         hintItems.add("Yunnan");
         hintItems.add("Guangdong");
         hintItems.add("Zhejiang");
@@ -216,8 +260,43 @@ public class HomepageActivity extends Activity {
         hintItems.add("Tianjing");
         hintItems.add("Chongqing");
         hintItems.add("Nei Mongol");
+    }
 
+    private void downloadHotelInfo(final String contentName) throws IOException{
 
+        AVQuery<AVObject> query = new AVQuery<AVObject>("host");
+        query.whereEqualTo("region", contentName);
+
+        query.findInBackground(new FindCallback<AVObject>() {
+            @Override
+            public void done(List<AVObject> list, AVException e) {
+                try {
+                    if (e == null) {
+                        for (AVObject avObject : list) {
+                            JSONObject jsonObject = avObject.toJSONObject();
+
+                            String hotelName = jsonObject.getString("hotelName");
+                            File file = new File(getFilesDir() + File.separator + "hotels" + File.separator
+                                    + contentName + File.separator + hotelName + File.separator + hotelName + ".txt");
+                            if (!file.getParentFile().exists())
+                                file.getParentFile().mkdirs();
+                            PrintStream out = new PrintStream(new FileOutputStream(file));
+
+                            out.print(jsonObject);
+                        }
+                        Message msg = new Message();
+                        msg.what = INFO_DOWNLOAD;
+                        handler.sendMessage(msg);
+                    } else {
+                        Log.e("Error: ", e.getMessage());
+                    }
+                } catch (FileNotFoundException e1) {
+                    e1.printStackTrace();
+                } catch (JSONException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
     }
 
     class DownloadTask extends AsyncTask<Void, Void, Void> {
@@ -234,23 +313,16 @@ public class HomepageActivity extends Activity {
                 @Override
                 public void done(AVObject avObject, AVException e) {
                     try {
-                        JSONObject content = new JSONObject();
+                        JSONObject content = avObject.toJSONObject();
 
-                        content.put("age", user_type.getInt("age"));
-                        content.put("sex", user_type.getString("sex"));
-                        content.put("region", user_type.getString("region"));
-                        content.put("introduction", user_type.getString("introduction"));
-
-                        File file = new File(HomepageActivity.this.getFilesDir() + File.separator + "profile" + File.separator + userName + File.separator + userName + ".txt");
+                        File file = new File(getFilesDir() + File.separator + "profile" + File.separator + userName + File.separator + userName + ".txt");
                         if (!file.getParentFile().exists())
                             file.getParentFile().mkdirs();
 
                         PrintStream out = new PrintStream(new FileOutputStream(file));
                         out.print(content.toString());
-                    } catch (JSONException e1) {
+                    } catch (FileNotFoundException e1) {
                         e1.printStackTrace();
-                    } catch (FileNotFoundException e2) {
-                        e2.printStackTrace();
                     }
                 }
             });

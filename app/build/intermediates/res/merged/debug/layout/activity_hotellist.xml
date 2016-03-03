@@ -43,7 +43,7 @@
                     android:layout_marginTop="17dp"
                     android:layout_width="62dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/default_avatar"
+                    android:src="@drawable/homepage_hotel01"
                     app:border_width="4dp"
                     app:border_color="#ffffffff"
                     android:layout_alignParentTop="true"

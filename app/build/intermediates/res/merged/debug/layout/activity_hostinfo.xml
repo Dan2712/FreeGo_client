@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f6f6f6"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="480px" >
+
+                <ImageSwitcher
+                    android:id="@+id/hostinfo_imageSwitcher1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside" >
+                </ImageSwitcher>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="top" >
+
+                    <ImageView
+                        android:id="@+id/hostinfo_mark"
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:src="@drawable/public_mark"
+                        android:background="#00000000"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="8dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="bottom" >
+
+                    <LinearLayout
+                        android:id="@+id/hostinfo_viewGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:layout_margin="5dp">
+                    </LinearLayout>
+                </RelativeLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/hostinfo_hotelName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="221b Baker Street"
+                        android:textSize="25sp"
+                        android:textColor="#ff4045"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="8dp"
+                        android:fontFamily="arial" />
+
+                    <TextView
+                        android:id="@+id/hostinfo_hotelLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Westminster, London, UK"
+                        android:textSize="12sp"
+                        android:textColor="#757575"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_below="@id/hostinfo_hotelName"/>
+
+                    <com.freego.view.CircleImageView
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:id="@+id/circleImageView"
+                        android:src="@drawable/homepage_beijing"
+                        app:border_width="4dp"
+                        app:border_color="#ffffffff"
+                        android:layout_alignParentTop="true" />
+
+                    <TextView
+                        android:id="@+id/hostinfo_hotelIntro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="First Hotel in FreeGo Application."
+                        android:textColor="#424242"
+                        android:textSize="16sp"
+                        android:layout_below="@id/hostinfo_hotelLocation"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="18dp"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="#e0e0e0"
+                    android:layout_gravity="center"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/hostinfo_rec_wanted"
+                        android:layout_width="155dp"
+                        android:layout_height="wrap_content"
+                        android:text="Wanted"
+                        android:textSize="12sp"
+                        android:textColor="#424242"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:id="@+id/hostinfo_rec_person"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2  Girls"
+                        android:textColor="#ff4045"
+                        android:textSize="16sp"
+                        android:layout_below="@id/hostinfo_rec_wanted"
+                        android:layout_marginLeft="12dp"/>
+
+                    <TextView
+                        android:id="@+id/hostinfo_basicinfo_between"
+                        android:layout_width="1.5dp"
+                        android:layout_height="60dp"
+                        android:background="#e0e0e0"
+                        android:layout_toRightOf="@id/hostinfo_rec_wanted"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:id="@+id/hostinfo_rec_period"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Period"
+                        android:textSize="12sp"
+                        android:textColor="#424242"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toRightOf="@id/hostinfo_basicinfo_between"/>
+
+                    <TextView
+                        android:id="@+id/hostinfo_rec_periodEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="4 Weeks"
+                        android:textColor="#666666"
+                        android:textSize="16sp"
+                        android:layout_below="@id/hostinfo_rec_period"
+                        android:layout_toRightOf="@id/hostinfo_basicinfo_between"
+                        android:layout_marginLeft="14dp" />
+
+                    <TextView
+                        android:id="@+id/hostinfo_rec_startEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="From 1864"
+                        android:textColor="#666666"
+                        android:textSize="16sp"
+                        android:layout_below="@id/hostinfo_rec_period"
+                        android:layout_toRightOf="@id/hostinfo_basicinfo_between"
+                        android:layout_marginLeft="80dp" />
+               </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="#e0e0e0"
+                    android:layout_gravity="center"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/public_message" />
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/public_call" />
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/public_email"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="#e0e0e0"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/hostinfo_rec_require"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Requirements"
+                    android:textSize="12sp"
+                    android:textColor="#757575"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="18dp"/>
+
+                <TextView
+                    android:id="@+id/hostinfo_rec_requireEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Self-care and responsible, cheerful and positive, humorous and caring of animals, respect and care about each other."
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="18dp" />
+
+                <TextView
+                    android:id="@+id/hostinfo_rec_jobs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jobs"
+                    android:textSize="12sp"
+                    android:textColor="#757575"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="18dp"/>
+
+                <TextView
+                    android:id="@+id/hostinfo_rec_jobsEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Simple housework like receive guests and clear houses, water flower and walk dog, help to prepare parties and BBQs."
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="18dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="#e0e0e0"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/hostinfo_rec_provide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Supplement"
+                    android:textSize="12sp"
+                    android:textColor="#757575"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="18dp"/>
+
+                <TextView
+                    android:id="@+id/hostinfo_rec_provideEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Two of you share a clean room with comfortable beds and a place for reading, dilicious foods, special route of this place."
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="18dp"/>
+
+                <TextView
+                    android:id="@+id/hostinfo_rec_experiences"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Experiences"
+                    android:textSize="12sp"
+                    android:textColor="#757575"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="18dp"/>
+
+                <TextView
+                    android:id="@+id/hostinfo_rec_experiencesEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Outdoor camera and swimming, parties and BBQs, marvellous outdoor activities like hiking camping and climbing."
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="18dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

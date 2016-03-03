@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.HotelListActivity"/>
+        <activity android:name=".activity.HostInfoActivity"/>
     </application>
 
 </manifest>

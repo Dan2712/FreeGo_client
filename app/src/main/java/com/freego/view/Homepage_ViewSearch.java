@@ -12,9 +12,6 @@ import com.freego.R;
 import com.freego.activity.HomepageActivity;
 import com.freego.app.GlobalApplication;
 
-/**
- * Created by dan on 16/2/19.
- */
 public class Homepage_ViewSearch extends LinearLayout{
 
     private View width;

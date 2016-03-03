@@ -6,9 +6,6 @@ import android.content.Context;
 
 import com.avos.avoscloud.AVOSCloud;
 
-/**
- * Created by dan on 16/2/15.
- */
 public class GlobalApplication extends Application {
 
     private static Context context;

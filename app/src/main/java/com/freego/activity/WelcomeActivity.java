@@ -23,7 +23,7 @@ public class WelcomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_welcome);
-AVUser.logOut();
+//AVUser.logOut();
         AVUser currentUser = AVUser.getCurrentUser();
         if (currentUser == null) {
             Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);

@@ -3,9 +3,6 @@ package com.freego.util;
 import android.app.ProgressDialog;
 import android.content.Context;
 
-/**
- * Created by dan on 16/2/17.
- */
 public class ProgressUtil {
 
     private static ProgressDialog dialog;

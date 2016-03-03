@@ -19,9 +19,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by henryye on 1/22/16.
- */
 public class HotelList_ListView_adapter extends BaseAdapter {
 
     private List<ImageHotel> myList;
@@ -82,8 +79,6 @@ public class HotelList_ListView_adapter extends BaseAdapter {
 
         View view;
 
-        ImageView search;
-
         if(convertView == null) {
             holder = new Holder();
             view = myInflator.inflate(R.layout.hotellist_adapter_list, null);
@@ -101,9 +96,9 @@ public class HotelList_ListView_adapter extends BaseAdapter {
 
         }
 
+        holder.image.setImageBitmap(imageplace.getImage());
         holder.hotelName.setText(imageplace.getHotelName());
         holder.hotelAdress.setText(imageplace.getHotelAdress());
-        holder.image.setImageResource(imageplace.getImageID());
         if(imageplace.getGender() == 1){
             holder.gender.setImageResource(R.drawable.public_male);
         }else if(imageplace.getGender() == 2){
@@ -223,4 +218,5 @@ public class HotelList_ListView_adapter extends BaseAdapter {
             }
         }
     }
+
 }
