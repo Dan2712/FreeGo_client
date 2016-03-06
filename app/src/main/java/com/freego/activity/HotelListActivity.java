@@ -136,8 +136,6 @@ public class HotelListActivity extends Activity {
         Intent intent = getIntent();
         destination = intent.getStringExtra("destination");
 
-        new DownloadImages().execute();
-
         week2 = (EditText)findViewById(R.id.weekTo);
         week1 = (EditText)findViewById(R.id.weekFrom);
         places_image = (ListView)findViewById(R.id.hotelList_view);
@@ -154,6 +152,8 @@ public class HotelListActivity extends Activity {
         month_start = (Spinner)findViewById(R.id.spinnerMonthFrom);
 
         initHotels();
+        new DownloadImages().execute();
+
         months = getResources().getStringArray(R.array.months);
         years = getResources().getStringArray(R.array.years);
         year_start.setSelection(setInitialDate(rightnow.get(Calendar.YEAR), years)+1);

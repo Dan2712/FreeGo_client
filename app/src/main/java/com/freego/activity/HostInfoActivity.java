@@ -33,15 +33,23 @@ public class HostInfoActivity extends Activity implements ViewSwitcher.ViewFacto
 
     private int flag;
 
+    private TextView nameText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hostinfo);
 
-        TextView textView =(TextView)findViewById(R.id.hostinfo_hotelName);
-        Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/Helvetica LT Light.ttf");
-        textView.setTypeface(typeFace);
+        initSwitcher();
 
+        nameText =(TextView)findViewById(R.id.hostinfo_hotelName);
+        Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/Helvetica LT Light.ttf");
+        nameText.setTypeface(typeFace);
+
+
+    }
+
+    public void initSwitcher() {
         imgIds = new int[]{R.drawable.host01,R.drawable.host02,R.drawable.host03,R.drawable.host04,
                 R.drawable.host05};
 

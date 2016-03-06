@@ -21,12 +21,14 @@ public final class R {
         public static final int abc_slide_out_top=0x7f050009;
         public static final int activity_fade=0x7f05000a;
         public static final int activity_hold=0x7f05000b;
-        public static final int fragment_slide_down_enter=0x7f05000c;
-        public static final int fragment_slide_up_exit=0x7f05000d;
-        public static final int hostinfo_left_in=0x7f05000e;
-        public static final int hostinfo_left_out=0x7f05000f;
-        public static final int hostinfo_right_in=0x7f050010;
-        public static final int hostinfo_right_out=0x7f050011;
+        public static final int activity_in=0x7f05000c;
+        public static final int activity_out=0x7f05000d;
+        public static final int fragment_slide_down_enter=0x7f05000e;
+        public static final int fragment_slide_up_exit=0x7f05000f;
+        public static final int hostinfo_left_in=0x7f050010;
+        public static final int hostinfo_left_out=0x7f050011;
+        public static final int hostinfo_right_in=0x7f050012;
+        public static final int hostinfo_right_out=0x7f050013;
     }
     public static final class array {
         public static final int months=0x7f0b0000;
@@ -2064,7 +2066,8 @@ containing a value of this type.
         public static final int support_simple_spinner_dropdown_item=0x7f040032;
     }
     public static final class mipmap {
-        public static final int ic_launcher=0x7f030000;
+        public static final int freego_logo=0x7f030000;
+        public static final int ic_launcher=0x7f030001;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f060000;

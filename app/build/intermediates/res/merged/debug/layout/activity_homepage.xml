@@ -40,7 +40,7 @@
             <com.freego.view.CircleImageView
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="8dp"
-                android:layout_marginTop="17dp"
+                android:layout_marginTop="15dp"
                 android:layout_width="62dp"
                 android:layout_height="50dp"
                 android:id="@+id/circleImageView"

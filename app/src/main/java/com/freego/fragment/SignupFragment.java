@@ -149,7 +149,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener, Vi
             case R.id.signup_submit:
                 String name_check = nameText.getText().toString();
                 boolean checked =false;
-                if (hostSelected.isSelected() || voluneerSelected.isSelected())
+                if (hostSelected.isChecked() || voluneerSelected.isChecked())
                     checked = true;
 
                 if (mailText.getText().toString().matches(MAIL_FORMAT) && pwdText.getText().toString().equals(pwdCfmText.getText().toString())

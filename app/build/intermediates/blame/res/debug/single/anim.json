@@ -24,36 +24,40 @@
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/anim/hostinfo_right_in.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_grow_fade_in_from_bottom.xml"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_grow_fade_in_from_bottom.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_fade_in.xml"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/activity_in.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/anim/activity_in.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_fade_in.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/hostinfo_left_in.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/anim/hostinfo_left_in.xml"
     },
     {
-        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/fragment_slide_up_exit.xml",
-        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/anim/fragment_slide_up_exit.xml"
-    },
-    {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/activity_hold.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/anim/activity_hold.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/fragment_slide_up_exit.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/anim/fragment_slide_up_exit.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
@@ -62,6 +66,10 @@
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
         "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/activity_out.xml",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/anim/activity_out.xml"
     },
     {
         "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/debug/anim/hostinfo_left_out.xml",

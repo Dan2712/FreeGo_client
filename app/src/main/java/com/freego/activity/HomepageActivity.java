@@ -100,8 +100,8 @@ public class HomepageActivity extends Activity {
                     Intent intent = new Intent(HomepageActivity.this, HotelListActivity.class);
                     intent.putExtra("destination", destination);
                     startActivity(intent);
-                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                     ProgressUtil.dismissProgress();
+                    overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
                     break;
             }
         }

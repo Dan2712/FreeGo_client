@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.AlphaAnimation;
@@ -82,6 +84,8 @@ public class LoginActivity extends Activity implements View.OnClickListener{
 
         nameText = (EditText) findViewById(R.id.login_usernameInput);
         pwdText = (EditText) findViewById(R.id.login_passwordInput);
+        pwdText.setTypeface(Typeface.DEFAULT);
+        pwdText.setTransformationMethod(new PasswordTransformationMethod());
         loginButton = (ImageButton) findViewById(R.id.login_loginButton);
         signButton = (ImageButton) findViewById(R.id.login_signupButton);
         logo = (ImageView) findViewById(R.id.login_logo);
@@ -142,6 +146,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                                         Intent intent = new Intent(LoginActivity.this, HomepageActivity.class);
                                         startActivity(intent);
                                         ProgressUtil.dismissProgress();
+                                        overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
                                         finish();
                                     } else {
                                         Message msg = new Message();

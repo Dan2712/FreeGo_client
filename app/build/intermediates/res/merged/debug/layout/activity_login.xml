@@ -42,7 +42,7 @@
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:textColorHint="#a9a9a9"
-                android:hint="Email address"
+                android:hint="Enter email address"
                 android:singleLine="true"
                 android:background="#55000000"
                 android:layout_width="260dp"
