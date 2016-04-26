@@ -10,27 +10,34 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.ImageView;
-import android.widget.ListView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.Toast;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
+import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.GetDataCallback;
 import com.freego.R;
 import com.freego.adapter.HotelList_ListView_adapter;
 import com.freego.bean.ImageHotel;
+import com.freego.util.FileUtil;
+import com.freego.view.CircleImageView;
+import com.freego.view.HeaderContainedList;
+import com.freego.view.HotelList_NiceSpinner;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,29 +46,26 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 public class HotelListActivity extends Activity {
 
-    private static final int FEMALE = 2;
+    private final static int FEMALE = 2;
 
-    private static final int MALE = 1;
+    private final static int MALE = 1;
 
-    private static final int NoWeekChosen = 0;
+    private final static int NoGenderChosen = 0;
 
-    private static final int NoGenderChosen = 0;
-
-    private static final int IMAGE_DOWN = 3;
+    private final static int IMAGE_DOWN = 3;
 
     private ArrayList<ImageHotel> hotels = new ArrayList<ImageHotel>();
 
-    private String destination;
-
-    private ListView places_image;
+    private HeaderContainedList places_image;
 
     private ImageView search;
 
@@ -81,21 +85,17 @@ public class HotelListActivity extends Activity {
 
     private EditText week2;
 
-    private Spinner month_start;
+    private HotelList_NiceSpinner month_start;
 
-    private Spinner year_start;
+    private HotelList_NiceSpinner year_start;
 
-    private Spinner month_end;
+    private HotelList_NiceSpinner month_end;
 
-    private Spinner year_end;
+    private HotelList_NiceSpinner year_end;
 
-    private Calendar rightnow = Calendar.getInstance();
+    private String[] years;
 
-    private String[] years;         //用于spinner初始值得设置
-
-    private String[] months;          //同上
-
-    private String[] subMonths;        // 已经过去的月分不显示
+    private String[] months;
 
     private Filter filter;
 
@@ -107,7 +107,21 @@ public class HotelListActivity extends Activity {
 
     public String genderInfo;
 
-    private boolean flag = false;
+    private TextView headerImage;
+
+    private TextView locationText;
+
+    private TextView userText;
+
+    private RelativeLayout searchAndCircle;
+
+    private ImageView header;
+
+    private LinearLayout headerText;
+
+    private CircleImageView circleImageView;
+
+    private String city;
 
     private HotelList_ListView_adapter filterAdapter;
 
@@ -133,97 +147,64 @@ public class HotelListActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_hotellist);
 
-        Intent intent = getIntent();
-        destination = intent.getStringExtra("destination");
+        final Intent intent = getIntent();
+        city = intent.getStringExtra("city");
+        String username = AVUser.getCurrentUser().get("username").toString();
 
-        week2 = (EditText)findViewById(R.id.weekTo);
-        week1 = (EditText)findViewById(R.id.weekFrom);
-        places_image = (ListView)findViewById(R.id.hotelList_view);
+        week2 = (EditText)findViewById(R.id.week2);
+        week1 = (EditText)findViewById(R.id.week1);
+
+        searchAndCircle = (RelativeLayout) findViewById(R.id.hotelList_circleAndSearch);
+        headerImage = (TextView) findViewById(R.id.hotelList_locationText);
+        locationText = (TextView) findViewById(R.id.hotelList_locationText);
+        locationText.setText(city);
+
+        circleImageView = (CircleImageView) findViewById(R.id.hotellist_circleImageView);
+        Bitmap user_avatar = FileUtil.readImage("profile" + File.separator + username + File.separator + "avatar_" + username);
+        circleImageView.setImageBitmap(user_avatar);
+
+        places_image = (HeaderContainedList)findViewById(R.id.hotelList_placeListview);
         search = (ImageView)findViewById(R.id.hotelList_search);
         myDrawer = (DrawerLayout) findViewById(R.id.drawerLayout);
         gender = (RadioGroup)findViewById(R.id.drawer_gender);
-        female = (RadioButton)findViewById(R.id.drawer_female);
-        male = (RadioButton)findViewById(R.id.drawer_male);
-        confirm = (Button)findViewById(R.id.drawer_confirm);
-        reset = (Button)findViewById(R.id.drawer_reset);
-        year_end = (Spinner)findViewById(R.id.spinnerYearTo);
-        month_end = (Spinner)findViewById(R.id.spinnerMonthTo);
-        year_start = (Spinner)findViewById(R.id.spinnerYearFrom);
-        month_start = (Spinner)findViewById(R.id.spinnerMonthFrom);
+        female = (RadioButton)findViewById(R.id.female);
+        male = (RadioButton)findViewById(R.id.male);
+        confirm = (Button)findViewById(R.id.confirmFilter);
+        reset = (Button)findViewById(R.id.resetFilter);
+        year_end = (HotelList_NiceSpinner)findViewById(R.id.spinnerYear2);
+        month_end = (HotelList_NiceSpinner)findViewById(R.id.spinnerMonth2);
+        year_start = (HotelList_NiceSpinner)findViewById(R.id.spinnerYear1);
+        month_start = (HotelList_NiceSpinner)findViewById(R.id.spinnerMonth1);
 
         initHotels();
         new DownloadImages().execute();
 
         months = getResources().getStringArray(R.array.months);
         years = getResources().getStringArray(R.array.years);
-        year_start.setSelection(setInitialDate(rightnow.get(Calendar.YEAR), years)+1);
-        month_start.setSelection(setInitialDate(rightnow.get(Calendar.MONTH), months) + 2);
+        List<String> months_list = new LinkedList<>(Arrays.asList(months));
+        month_start.attachDataSource(months_list);
+        month_end.attachDataSource(months_list);
+
+        List<String> years_list = new LinkedList<>(Arrays.asList(years));
+        year_start.attachDataSource(years_list);
+        year_end.attachDataSource(years_list);
+
         filterAdapter = new HotelList_ListView_adapter(this, hotels);
         filter = filterAdapter.getFilter();
+
+
+        LayoutInflater headerInflater = (LayoutInflater)this.getLayoutInflater();
+        header = (ImageView)headerInflater.inflate(R.layout.hotellist_header_item, null);
+        LayoutInflater headerTextInflater = (LayoutInflater)this.getLayoutInflater();
+        headerText = (LinearLayout)headerInflater.inflate(R.layout.hotellist_header_item2, null);
+        places_image.addHeaderView(header);
+        places_image.addHeaderView(headerText);
+        places_image.setFinalTopHeight(450);
+        userText = (TextView) headerText.findViewById(R.id.hotellist_header_user);
+        userText.setText(username);
+
         places_image.setAdapter(filterAdapter);
-        search.setImageResource(R.drawable.public_search);
-
-        places_image.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent1 = new Intent(HotelListActivity.this, HostInfoActivity.class);
-                startActivity(intent1);
-            }
-        });
-        //全部空值的话，设置关掉drawer， 绑定一个输入了，另一个就必须输入
-        confirm.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {     //如果什么都没有填则直接关掉drawer
-                if (judgeCondition()) {
-                    myDrawer.closeDrawer(Gravity.LEFT);
-                }
-                else if((!week1.getText().toString().equals("") & week2.getText().toString().equals("")) | (week1.getText().toString().equals("") & !week2.getText().toString().equals("")))
-                {
-                    Toast.makeText(HotelListActivity.this, "Please Input Week Completely", Toast.LENGTH_SHORT).show();
-                }
-                else if((!year_end.getSelectedItem().toString().equals("") & month_end.getSelectedItem().toString().equals("")) | (year_end.getSelectedItem().toString().equals("") & !month_end.getSelectedItem().toString().equals("")))
-                {
-                    Toast.makeText(HotelListActivity.this, "Please Input Year Completely", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    if (!week1.getText().equals("")) {
-                        weeks = week1.getText().toString() + "0" + week2.getText().toString();
-                    } else {
-                        weeks = ""+ NoWeekChosen;
-                    }
-                    if (gender.getCheckedRadioButtonId() == R.id.drawer_male) {
-                        genderInfo = "" + MALE;
-                    } else if (gender.getCheckedRadioButtonId() == R.id.drawer_female) {
-                        genderInfo = "" + FEMALE;
-                    } else {
-                        genderInfo = "" + NoGenderChosen;
-                    }
-                    if (!year_end.equals("")) {
-                        String monthBegining = "";
-                        String monthEnd = "";
-                        if (Integer.parseInt(month_start.getSelectedItem().toString()) < 10) {
-                            monthBegining = "0" + month_start.getSelectedItem().toString();
-                        } else {
-                            monthBegining = month_start.getSelectedItem().toString();
-                        }
-                        if (Integer.parseInt(month_end.getSelectedItem().toString()) < 10) {
-                            monthEnd = "0" + month_end.getSelectedItem().toString();
-                        } else {
-                            monthEnd = month_end.getSelectedItem().toString();
-                        }
-                        time_start = year_start.getSelectedItem().toString() + monthBegining;
-                        time_end = year_end.getSelectedItem().toString() + monthEnd;
-
-                    } else {
-                        time_start = "0000";
-                        time_end = "0000";
-                    }
-                    filter.filter(genderInfo + time_start + time_end + weeks);//         性别+开始日期+结束日期+最低星期+0+最高星期
-                    myDrawer.closeDrawer(Gravity.LEFT);                 //         eg： 1 1601 1603 5 0 9
-                }
-            }
-        });
+        places_image.setFocusable(false);
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -232,12 +213,49 @@ public class HotelListActivity extends Activity {
             }
         });
 
+        places_image.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+                int alphafloat = header.getTop();
+                int absAlpha = Math.abs(alphafloat);
+                if (absAlpha / 2 > 30 & absAlpha / 2 < 255) {
+                    headerImage.getBackground().setAlpha(255 - absAlpha / 2);
+
+                    int a = 255 - absAlpha / 2;
+                }
+                if (absAlpha < 100) {
+                    headerImage.getBackground().setAlpha(255);
+                }
+            }
+
+        });
+
+        places_image.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent1 = new Intent(HotelListActivity.this, HostInfoActivity.class);
+                intent1.putExtra("hotelName", hotels.get(position - 2).getHotelName());
+                intent1.putExtra("city", city);
+                startActivity(intent1);
+                overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+                finish();
+            }
+        });
+
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
 
             public void onClick(View v) {
-                year_end.setSelection(0);
-                month_end.setSelection(0);
+                month_start.setSelectedIndex(0);
+                year_start.setSelectedIndex(0);
+                year_end.setSelectedIndex(0);
+                month_end.setSelectedIndex(0);
                 week2.setText("");
                 week1.setText("");
                 female.setChecked(false);
@@ -246,46 +264,34 @@ public class HotelListActivity extends Activity {
             }
         });
 
-        female.setOnClickListener(new View.OnClickListener() {
+        confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!flag){
-                    female.setChecked(true);
-                    flag = true;
-                }else{
-                    female.setChecked(false);
-                    flag = false;
+                myDrawer.closeDrawer(Gravity.LEFT);
+                if(gender.getCheckedRadioButtonId() == R.id.female){
+                    genderInfo = "" + FEMALE;
+                }else if(gender.getCheckedRadioButtonId() == R.id.male){
+                    genderInfo = "" + MALE;
+                } else {
+                    genderInfo = "" + NoGenderChosen;
                 }
+                time_start = year_start.getSelectedIndex()+15 +"" + "0"+(month_start.getSelectedIndex()+1);
+                time_end = year_end.getSelectedIndex()+15 +"" + "0"+(month_end.getSelectedIndex()+1);
+                weeks = week1.getText()+"0"+week2.getText();
+                filter.filter(genderInfo + time_start + time_end + weeks);
+                myDrawer.closeDrawer(Gravity.LEFT);
+                filterAdapter.notifyDataSetChanged();
             }
         });
-
-        male.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!flag){
-                    male.setChecked(true);
-                    flag = true;
-                }else{
-                    male.setChecked(false);
-                    flag = false;
-                }
-            }
-        });
-
-    }
-
-
-    public int setInitialDate(int date, String[] items){
-
-        for(int i = 0; i < items.length; i++){
-                return i;
-            }
-        return 1;
     }
 
     private void initHotels(){
-        File file = new File(getFilesDir() + File.separator + "hotels" + File.separator + destination);
+        File file = new File(getFilesDir() + File.separator + "hotels" + File.separator + city);
         File[] files = file.listFiles();
+
+        if (files == null)
+            return;
+
         FileInputStream inputStream = null;
         BufferedReader reader = null;
         JSONObject jsonObject = null;
@@ -294,17 +300,20 @@ public class HotelListActivity extends Activity {
             for (int i = 0; i < files.length; i++) {
                 inputStream = new FileInputStream(files[i] + File.separator + files[i].getName() + ".txt");
                 reader = new BufferedReader(new InputStreamReader(inputStream));
-                String content = "";
+                String line = "";
+                StringBuilder content = new StringBuilder();
 
-                while ((content = reader.readLine()) != null) {
-                    jsonObject = new JSONObject(content.toString());
-                    JSONObject imageObject = jsonObject.getJSONObject("image");
-                    String imageId = imageObject.getString("objectId");
-                    imagesId.add(imageId);
-                    ImageHotel imageHotel = new ImageHotel(null, jsonObject.getString("hotelName"), jsonObject.getString("region")
-                            , jsonObject.getInt("requireSex"), jsonObject.getInt("requireNumber"), jsonObject.getInt("startDate"));
-                    hotels.add(imageHotel);
-                }
+                while ((line = reader.readLine()) != null)
+                    content.append(line);
+
+                jsonObject = new JSONObject(content.toString());
+                JSONObject imageObject = jsonObject.getJSONObject("image");
+                String imageId = imageObject.getString("objectId");
+                imagesId.add(imageId);
+                ImageHotel imageHotel = new ImageHotel(null, jsonObject.getString("hotelName"), jsonObject.getString("region")
+                        , jsonObject.getInt("requireSex"), jsonObject.getInt("requireNumber"), jsonObject.getInt("startDate"));
+                hotels.add(imageHotel);
+
             }
         } catch (FileNotFoundException e1) {
             e1.printStackTrace();
@@ -319,18 +328,6 @@ public class HotelListActivity extends Activity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-        }
-    }
-
-    public boolean judgeCondition(){
-        if(week1.getText().toString().equals("") & week2.getText().toString().equals("")
-                & female.isChecked() == false & male.isChecked() == false
-                & month_end.getSelectedItem().toString().equals("")
-                & year_end.getSelectedItem().toString().equals("")){
-
-            return true;
-        }else {
-            return false;
         }
     }
 
@@ -354,21 +351,13 @@ public class HotelListActivity extends Activity {
                                 if (e == null) {
                                     bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
                                     hotels.get(finalI1).setImage(bitmap);
+                                    String url = "hotels/" + city + File.separator + hotels.get(finalI).getHotelName() + File.separator + "image1";
 
                                     Message msg = new Message();
                                     msg.what = IMAGE_DOWN;
                                     handler.sendMessage(msg);
 
-                                    try {
-                                        File file = new File("data/data/com.freego/files/hotels/" + destination
-                                                + File.separator + hotels.get(finalI).getHotelName() + File.separator + "image1");
-                                        FileOutputStream fileOutputStream = new FileOutputStream(file);
-                                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
-                                        fileOutputStream.flush();
-                                        fileOutputStream.close();
-                                    } catch (IOException e1) {
-                                        e1.printStackTrace();
-                                    }
+                                    FileUtil.writeImage(url, bitmap);
                                 }
                             }
                         });

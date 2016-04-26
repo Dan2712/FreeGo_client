@@ -116,6 +116,7 @@
                 </FrameLayout>
             </LinearLayout>
             <TextView
+                android:id="@+id/forgotText"
                 android:textColor="#ffffff"
                 android:textSize="10sp"
                 android:text="Forget password?"

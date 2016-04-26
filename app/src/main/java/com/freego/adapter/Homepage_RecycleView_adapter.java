@@ -100,7 +100,7 @@ public class Homepage_RecycleView_adapter extends RecyclerView.Adapter<RecyclerV
             return DESTINATION_VIEW;
         else if (position == 3)
             return COLUMN_VIEW;
-        else if (position ==6)
+        else if (position == 6)
             return NOTE_TITLE;
         else if (position == 7 || position == 8)
             return NOTE_VIEW;
@@ -163,7 +163,7 @@ public class Homepage_RecycleView_adapter extends RecyclerView.Adapter<RecyclerV
         }
     }
 
-    public static interface OnRecyclerViewItemClickListener {
+    public interface OnRecyclerViewItemClickListener {
         void onItemClick(View view , HomepageContent content);
     }
 

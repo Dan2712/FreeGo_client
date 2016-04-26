@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.avos.avoscloud.AVException;
@@ -54,6 +55,8 @@ public class LoginActivity extends Activity implements View.OnClickListener{
     private AnimationSet animationSet;
 
     private LinearLayout linearLayout;
+
+    private TextView forgotText;
 
     private SignupFragment signupFragment;
 
@@ -91,6 +94,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         logo = (ImageView) findViewById(R.id.login_logo);
         loginDialog = (LinearLayout) findViewById(R.id.login_loginDialog);
         linearLayout = (LinearLayout) findViewById(R.id.login_linearLayout);
+        forgotText = (TextView) findViewById(R.id.forgotText);
 
         loginDialog.setAlpha(0);
         animationSet = new AnimationSet(true);
@@ -128,6 +132,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
 
         loginButton.setOnClickListener(this);
         signButton.setOnClickListener(this);
+        forgotText.setOnClickListener(this);
     }
 
     @Override
@@ -172,9 +177,10 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                 loginDialog.setVisibility(View.INVISIBLE);
                 logo.setVisibility(View.INVISIBLE);
                 fragmentTransaction.commit();
-
                 linearLayout.setBackgroundResource(R.drawable.signup_background);
                 break;
+            case R.id.forgotText:
+                Toast.makeText(LoginActivity.this, "Try to remember", Toast.LENGTH_SHORT).show();
         }
     }
 }

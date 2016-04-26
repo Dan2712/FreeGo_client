@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f6f6f6"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="480px" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/default_image"/>
+
+                <TextView
+                    android:id="@+id/hostinfo_Apply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apply"
+                    android:textColor="#ffffff"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="5dp"
+                    android:paddingRight="8dp"
+                    android:background="#bb000000"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="8dp"/>
+
+                <TextView
+                    android:id="@+id/hostinfo_imageEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Image"
+                    android:textColor="#ffffff"
+                    android:background="#bb000000"
+                    android:layout_alignParentBottom="true"
+                    android:paddingTop="4dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="145dp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="#e0e0e0"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/hostedit_hotel_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Input Hotel Name"
+                        android:textSize="25sp"
+                        android:textColorHint="#ff4045"
+                        android:textColor="#ff4045"
+                        android:paddingTop="0dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:fontFamily="arial" />
+
+                    <EditText
+                        android:id="@+id/hostedit_hotel_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Input Address"
+                        android:textSize="12sp"
+                        android:textColorHint="#757575"
+                        android:textColor="#757575"
+                        android:paddingTop="0dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:layout_below="@id/hostedit_hotel_name"/>
+
+                    <com.freego.view.CircleImageView
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:id="@+id/circleImageView"
+                        android:src="@drawable/default_avatar"
+                        app:border_width="4dp"
+                        app:border_color="#ffffffff"
+                        android:layout_alignParentTop="true" />
+
+                    <EditText
+                        android:id="@+id/hostedit_hotel_intro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Input Hotel Introduction"
+                        android:textColorHint="#424242"
+                        android:textColor="#424242"
+                        android:textSize="16sp"
+                        android:layout_below="@id/hostedit_hotel_location"
+                        android:paddingTop="0dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="#e0e0e0"
+                    android:layout_gravity="center"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/hostedit_wanted"
+                        android:layout_width="155dp"
+                        android:layout_height="wrap_content"
+                        android:text="Wanted"
+                        android:textSize="12sp"
+                        android:textColor="#424242"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <Spinner
+                        android:id="@+id/hostedit_person_number_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawSelectorOnTop="true"
+                        android:layout_below="@id/hostedit_wanted"
+                        android:layout_marginLeft="8dp"/>
+
+                    <Spinner
+                        android:id="@+id/hostedit_gender_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawSelectorOnTop="true"
+                        android:layout_below="@id/hostedit_wanted"
+                        android:layout_marginLeft="50dp" />
+
+                    <TextView
+                        android:id="@+id/basicinfo_between"
+                        android:layout_width="1.5dp"
+                        android:layout_height="60dp"
+                        android:background="#e0e0e0"
+                        android:layout_toRightOf="@id/hostedit_wanted" />
+
+                    <TextView
+                        android:id="@+id/hostedit_period"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Period"
+                        android:textSize="12sp"
+                        android:textColor="#424242"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toRightOf="@id/basicinfo_between"/>
+
+                    <Spinner
+                        android:id="@+id/hostedit_period_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawSelectorOnTop="true"
+                        android:layout_below="@id/hostedit_period"
+                        android:layout_toRightOf="@id/basicinfo_between"
+                        android:layout_marginLeft="4dp" />
+
+                    <TextView
+                        android:id="@+id/hostedit_from"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="From"
+                        android:textSize="12sp"
+                        android:textColor="#424242"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="55dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toRightOf="@id/hostedit_period" />
+
+                    <Spinner
+                        android:id="@+id/hostedit_start_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawSelectorOnTop="true"
+                        android:layout_below="@id/hostedit_period"
+                        android:layout_toRightOf="@id/basicinfo_between"
+                        android:layout_marginLeft="95dp" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="#e0e0e0"
+                    android:layout_gravity="center"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/hostinfo_message"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/public_message" />
+
+                    <ImageView
+                        android:id="@+id/hostinfo_phone"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/public_call" />
+
+                    <ImageView
+                        android:id="@+id/hostinfo_email"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/public_email"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="#e0e0e0"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/hostedit_require"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Requirements"
+                    android:textSize="12sp"
+                    android:textColor="#757575"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="18dp"/>
+
+                <EditText
+                    android:id="@+id/hostedit_requireEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Input requirement"
+                    android:textSize="16sp"
+                    android:maxLines="3"
+                    android:paddingLeft="8dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="18dp" />
+
+                <TextView
+                    android:id="@+id/hostedit_jobs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jobs"
+                    android:textSize="12sp"
+                    android:textColor="#757575"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="18dp"/>
+
+                <EditText
+                    android:id="@+id/hostedit_jobsEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Input Job Content"
+                    android:textSize="16sp"
+                    android:paddingLeft="8dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="18dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="#e0e0e0"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/hostedit_provide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Supplement"
+                    android:textSize="12sp"
+                    android:textColor="#757575"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="18dp"/>
+
+                <EditText
+                    android:id="@+id/hostedit_provideEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Input Supply"
+                    android:textSize="16sp"
+                    android:paddingLeft="8dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="18dp"/>
+
+                <TextView
+                    android:id="@+id/hostedit_experiences"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Experiences"
+                    android:textSize="12sp"
+                    android:textColor="#757575"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="18dp"/>
+
+                <EditText
+                    android:id="@+id/hostedit_experiencesEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Input your hotel's activitise"
+                    android:textSize="16sp"
+                    android:paddingLeft="8dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="18dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

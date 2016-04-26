@@ -38,16 +38,25 @@
             android:layout_height="wrap_content">
 
             <com.freego.view.CircleImageView
+                android:id="@+id/circleImageView"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="15dp"
                 android:layout_width="62dp"
                 android:layout_height="50dp"
-                android:id="@+id/circleImageView"
                 android:src="@drawable/default_avatar"
                 app:border_width="4dp"
                 app:border_color="#ffffffff"
                 android:layout_alignParentTop="true"/>
+
+            <ImageView
+                android:id="@+id/alertImage"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/alert"
+                android:layout_alignTop="@id/circleImageView"
+                android:layout_alignRight="@id/circleImageView"
+                android:visibility="invisible"/>
         </RelativeLayout>
     </FrameLayout>
 

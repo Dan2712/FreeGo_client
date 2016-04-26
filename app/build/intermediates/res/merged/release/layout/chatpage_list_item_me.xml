@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/right_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="right">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/chatPageContent"
+            android:background="@drawable/message_sent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:textColor="#565a5c"
+            android:textSize="15sp"/>
+
+        <com.freego.view.CircleImageView
+            android:layout_alignRight="@id/chatPageContent"
+            android:layout_alignBottom="@id/chatPageContent"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:id="@+id/chatPageIcon"
+            app:border_width="1dp"
+            app:border_color="#ffffffff" />
+
+    </RelativeLayout>
+</LinearLayout>

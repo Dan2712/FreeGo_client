@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <com.freego.view.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/userIcon"
+            app:border_width="1dp"
+            app:border_color="#ffffffff"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:text="sss"
+            android:id="@+id/chatUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/userIcon"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#505153"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:text="ddd"
+            android:id="@+id/newMsgText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/chatUserName"
+            android:layout_toRightOf="@id/userIcon"/>
+
+        <LinearLayout
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp">
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:id="@+id/newMsgHint"
+                android:layout_width="18dp"
+                android:layout_height="18dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

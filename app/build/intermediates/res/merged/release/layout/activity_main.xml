@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#212121"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/chat_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/public_back"
+            android:scaleType="centerInside"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="15dp" />
+
+        <TextView
+            android:id="@+id/chat_talk_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mr.Hudson"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:fontFamily="arial"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:id="@+id/chat_info"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/public_defaulticon"
+            android:scaleType="centerInside"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#0000"
+        android:background="#f4000000">
+    </ListView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#c0c0c0"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#f9f9f9">
+
+        <EditText
+            android:id="@+id/input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Write message..."
+            android:maxLines="2" />
+        <Button
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#0000"
+            android:text="Send" />
+    </LinearLayout>
+</LinearLayout>

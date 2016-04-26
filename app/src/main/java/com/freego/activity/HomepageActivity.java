@@ -14,9 +14,9 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageView;
 
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVFile;
@@ -30,6 +30,7 @@ import com.freego.R;
 import com.freego.adapter.Homepage_RecycleView_adapter;
 import com.freego.app.GlobalApplication;
 import com.freego.bean.HomepageContent;
+import com.freego.util.FileUtil;
 import com.freego.util.ProgressUtil;
 import com.freego.view.CircleImageView;
 import com.freego.view.Homepage_ViewSearch;
@@ -55,7 +56,7 @@ public class HomepageActivity extends Activity {
 
     private ArrayList<String> hintItems = new ArrayList<String>();
 
-    private String destination;
+    private String city;
 
     private CircleImageView circleImageView;
 
@@ -89,6 +90,8 @@ public class HomepageActivity extends Activity {
 
     private Bitmap avatar;
 
+    private ImageView alertImage;
+
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -98,7 +101,7 @@ public class HomepageActivity extends Activity {
                     break;
                 case INFO_DOWNLOAD:
                     Intent intent = new Intent(HomepageActivity.this, HotelListActivity.class);
-                    intent.putExtra("destination", destination);
+                    intent.putExtra("city", city);
                     startActivity(intent);
                     ProgressUtil.dismissProgress();
                     overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
@@ -115,6 +118,8 @@ public class HomepageActivity extends Activity {
 
         search = (Homepage_ViewSearch) findViewById(R.id.homepage_search_view);
         mRecyclerView = (RecyclerView) findViewById(R.id.homepage_recycler_view);
+        alertImage = (ImageView) findViewById(R.id.alertImage);
+
         isExpand = true;
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -133,6 +138,7 @@ public class HomepageActivity extends Activity {
             }
         });
 
+
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -143,8 +149,8 @@ public class HomepageActivity extends Activity {
         searchBox.setDropDownWidth(600);
         searchBox.setThreshold(1);
 
-        initContents();
         initHintItems();
+        initContents();
 
         mAdapter = new Homepage_RecycleView_adapter(contents);
         mRecyclerView.setAdapter(mAdapter);
@@ -152,26 +158,39 @@ public class HomepageActivity extends Activity {
             @Override
             public void onItemClick(View view, final HomepageContent content) {
                 ProgressUtil.showProgress(HomepageActivity.this);
-                try {
-                    destination = content.getImageName();
-                    downloadHotelInfo(content.getImageName());
-                } catch (IOException e) {
-                    e.printStackTrace();
+                if (content.getImageType().equals("city")) {
+                    try {
+                        city = content.getImageName();
+                        downloadHotelInfo(content.getImageName());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else if (content.getImageType().equals("hotel")) {
+                    Intent intent = new Intent(HomepageActivity.this, HostInfoActivity.class);
+                    intent.putExtra("city", "Beijing");
+                    intent.putExtra("hotelName", content.getImageName());
+                    startActivity(intent);
+                    ProgressUtil.dismissProgress();
+                    overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+                } else if (content.getImageType().equals("note")) {
+                    Intent intent = new Intent(HomepageActivity.this, NotesActivity.class);
+                    startActivity(intent);
+                    ProgressUtil.dismissProgress();
+                    overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
                 }
             }
         });
 
         circleImageView = (CircleImageView) findViewById(R.id.circleImageView);
-
-        searchBox.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        circleImageView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ProgressUtil.showProgress(HomepageActivity.this);
-                try {
-                    destination = hintItems.get(position);
-                    downloadHotelInfo(hintItems.get(position));
-                } catch (IOException e) {
-                    e.printStackTrace();
+            public void onClick(View v) {
+                if (AVUser.getCurrentUser().getInt("type") == 1) {
+                    Intent intent = new Intent(HomepageActivity.this, MyHotelActivity.class);
+                    startActivity(intent);
+                } else if (AVUser.getCurrentUser().getInt("type") == 0) {
+                    Intent intent = new Intent(HomepageActivity.this, MyStoryActivity.class);
+                    startActivity(intent);
                 }
             }
         });
@@ -182,10 +201,12 @@ public class HomepageActivity extends Activity {
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
                     String contentInput = searchBox.getText().toString();
                     byte[] items = contentInput.getBytes();
-                    items[0] = (byte)((char)items[0] - ( 'a' - 'A'));
+
+                    if (items[0] > 96 && items[0] < 123)
+                        items[0] = (byte)((char)items[0] - ('a' - 'A'));
                     String contentName = new String(items);
                     ProgressUtil.showProgress(HomepageActivity.this);
-                    destination = contentName;
+                    city = contentName;
                     try {
                         downloadHotelInfo(contentName);
                     } catch (IOException e) {
@@ -212,11 +233,11 @@ public class HomepageActivity extends Activity {
         contents.add(shanghai);
         HomepageContent sichuan = new HomepageContent("Hunan", R.drawable.homepage_sichuan, "city");
         contents.add(sichuan);
-        HomepageContent hotHotel01 = new HomepageContent("hotHotel01", R.drawable.homepage_hotel01, "hotel");
+        HomepageContent hotHotel01 = new HomepageContent("Shuke Hotel", R.drawable.homepage_hotel01, "hotel");
         contents.add(hotHotel01);
-        HomepageContent hotHotel02 = new HomepageContent("hotHotel02", R.drawable.homepage_hotel02, "hotel");
+        HomepageContent hotHotel02 = new HomepageContent("Holmes' House", R.drawable.homepage_hotel02, "hotel");
         contents.add(hotHotel02);
-        HomepageContent hotHotel03 = new HomepageContent("hotHotel03", R.drawable.homepage_hotel03, "hotel");
+        HomepageContent hotHotel03 = new HomepageContent("Beita Hotel", R.drawable.homepage_hotel03, "hotel");
         contents.add(hotHotel03);
         HomepageContent hotNote01 = new HomepageContent("hotNote01", R.drawable.homepage_note1, "note");
         contents.add(hotNote01);
@@ -232,8 +253,8 @@ public class HomepageActivity extends Activity {
         hintItems.add("Hongkong");
         hintItems.add("Hunan");
         hintItems.add("Taiwan");
-        hintItems.add("shanghai");
-        hintItems.add("tibet");
+        hintItems.add("Shanghai");
+        hintItems.add("Tibet");
         hintItems.add("Yunnan");
         hintItems.add("Guangdong");
         hintItems.add("Zhejiang");
@@ -312,18 +333,10 @@ public class HomepageActivity extends Activity {
             user_type.fetchIfNeededInBackground(new GetCallback<AVObject>() {
                 @Override
                 public void done(AVObject avObject, AVException e) {
-                    try {
-                        JSONObject content = avObject.toJSONObject();
+                    JSONObject content = avObject.toJSONObject();
+                    String url = "profile" + File.separator + userName + File.separator + userName + ".txt";
 
-                        File file = new File(getFilesDir() + File.separator + "profile" + File.separator + userName + File.separator + userName + ".txt");
-                        if (!file.getParentFile().exists())
-                            file.getParentFile().mkdirs();
-
-                        PrintStream out = new PrintStream(new FileOutputStream(file));
-                        out.print(content.toString());
-                    } catch (FileNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
+                    FileUtil.writeFile(url, content.toString());
                 }
             });
         }
@@ -339,20 +352,13 @@ public class HomepageActivity extends Activity {
                             @Override
                             public void done(byte[] bytes, AVException e) {
                                 avatar = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                                String url = "profile" + File.separator + userName + File.separator + "avatar_" + userName;
 
                                 Message msg = new Message();
                                 msg.what = AVATAR_UPDATE;
                                 handler.sendMessage(msg);
 
-                                try {
-                                    File file = new File("data/data/com.freego/files/profile/" + userName + "/avatar_" + userName);
-                                    FileOutputStream fileOutputStream = new FileOutputStream(file);
-                                    avatar.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
-                                    fileOutputStream.flush();
-                                    fileOutputStream.close();
-                                } catch (IOException e1) {
-                                    e1.printStackTrace();
-                                }
+                                FileUtil.writeImage(url, avatar);
                             }
                         });
                     }
@@ -360,4 +366,5 @@ public class HomepageActivity extends Activity {
             });
         }
     }
+
 }

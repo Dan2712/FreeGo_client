@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#55000000">
+
+    <include layout="@layout/signup_bottom" />
+
+    <TextView
+        android:id="@+id/signup_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textSize="26sp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="20dp" />
+
+    <ImageView
+        android:id="@+id/signup_arrow"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/signup_arrow"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="22dp"
+        android:layout_toRightOf="@id/signup_title"
+        android:layout_marginLeft="180dp"
+        android:layout_above="@+id/signup_emailLinearlayout" />
+
+
+    <TextView
+        android:layout_marginLeft="25dp"
+        android:id="@+id/signup_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email Address"
+        android:layout_below="@id/signup_title"
+        android:layout_marginTop="5dp"
+        android:textSize="15sp"
+        android:textColor="#ffffff"/>
+
+    <LinearLayout
+        android:id="@+id/signup_emailLinearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/signup_email">
+
+        <EditText
+            android:id="@+id/signup_editEmail"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/signup_textbackground"
+            android:hint="Input Email Address"
+            android:textSize="15sp"
+            android:singleLine="true"/>
+
+        <ImageView
+            android:id="@+id/signup_emailCheckImage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <TextView
+
+        android:layout_marginLeft="25dp"
+        android:id="@+id/signup_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_below="@id/signup_emailLinearlayout"
+        android:textSize="15sp"
+        android:textColor="#ffffff"/>
+
+    <EditText
+        android:id="@+id/signup_editName"
+        android:layout_width="344dp"
+        android:layout_height="55dp"
+        android:background="@drawable/signup_textbackground"
+        android:hint="Input Name"
+        android:textSize="15sp"
+        android:layout_below="@id/signup_name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp"
+        android:paddingLeft="21dp"
+        android:singleLine="true"/>
+
+    <TextView
+        android:id="@+id/signup_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:layout_below="@+id/signup_editName"
+        android:layout_marginLeft="25dp"
+        android:textSize="15sp"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/signup_inputPassword"
+        android:inputType="textPassword"
+        android:layout_width="344dp"
+        android:layout_height="55dp"
+        android:background="@drawable/signup_textbackground"
+        android:hint="Input Password"
+        android:textSize="15sp"
+        android:layout_below="@+id/signup_password"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="21dp"
+        android:singleLine="true"/>
+
+    <TextView
+        android:id="@+id/signup_viewPwdConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm"
+        android:layout_below="@+id/signup_inputPassword"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="2dp"
+        android:textSize="15sp"
+        android:textColor="#ffffff" />
+
+    <LinearLayout
+        android:id="@+id/signup_passwordLinearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/signup_viewPwdConfirm">
+
+        <EditText
+            android:id="@+id/signup_inputPwdConfirm"
+            android:inputType="textPassword"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:background="@drawable/signup_textbackground"
+            android:hint="Input Password Again"
+            android:textSize="15sp"
+            android:singleLine="true"/>
+
+        <ImageView
+            android:id="@+id/signup_passwordCheckImage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/signup_userType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="40dp"
+        android:layout_below="@id/signup_passwordLinearlayout" >
+
+        <RadioButton
+            android:id="@+id/signup_volunteerType"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:background="@drawable/public_radiobutton_colors"
+            android:layout_marginRight="50dp"
+            android:text="Volunteer"
+            android:textSize="15sp"
+            android:textColor="#ffffffff"
+            android:button="@null"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/signup_hostType"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:background="@drawable/public_radiobutton_colors"
+            android:button="@null"
+            android:text="Host"
+            android:textColor="#ffffffff"
+            android:textSize="15sp"/>
+
+    </RadioGroup>
+
+</RelativeLayout>

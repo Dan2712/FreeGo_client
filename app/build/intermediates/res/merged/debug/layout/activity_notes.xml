@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.freego.activity.NotesActivity"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="256dp">
+
+                <ImageView
+                    android:id="@+id/notes_title_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/notes_01"
+                    android:scaleType="centerInside"/>
+
+                <ImageView
+                    android:id="@+id/hostinfo_mark"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:src="@drawable/public_mark"
+                    android:background="#00000000"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="8dp"/>
+
+                <TextView
+                    android:id="@+id/notes_title_image_shadow"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#dd212121"
+                    android:layout_alignBottom="@id/notes_title_image" />
+
+                <TextView
+                    android:id="@+id/notes_title_hotel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[Backpack Decade]"
+                    android:layout_alignTop="@id/notes_title_image_shadow"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="6dp"/>
+
+                <TextView
+                    android:id="@+id/notes_title_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dream of LiJiang"
+                    android:layout_toRightOf="@id/notes_title_hotel"
+                    android:layout_alignTop="@id/notes_title_image_shadow"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="6dp"/>
+
+                <TextView
+                    android:id="@+id/notes_title_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="05.2015-07.2015"
+                    android:layout_below="@id/notes_title_name"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="6dp"/>
+
+                <TextView
+                    android:id="@+id/notes_title_viewCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2191"
+                    android:layout_alignBottom="@id/notes_title_image_shadow"
+                    android:layout_alignParentRight="true"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:layout_margin="6dp"/>
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/public_eye"
+                    android:layout_toLeftOf="@id/notes_title_viewCount"
+                    android:layout_alignBottom="@id/notes_title_image_shadow"
+                    android:layout_margin="4dp"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <com.freego.view.CircleImageView
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:id="@+id/circleImageView"
+                        android:src="@drawable/public_kevin"
+                        app:border_width="4dp"
+                        app:border_color="#ffffffff" />
+
+                    <TextView
+                        android:id="@+id/notes_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kevin on the Way"
+                        android:textColor="#ff4045"
+                        android:textSize="16dp"
+                        android:fontFamily="arial"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="80dp"/>
+
+                    <TextView
+                        android:id="@+id/notes_user_slogan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Life was like a box of chocolates, you never know what you're gonna get."
+                        android:textColor="#757575"
+                        android:textSize="12sp"
+                        android:layout_below="@id/notes_user_name"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="80dp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="#e0e0e0"
+                    android:layout_gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="        In recent years, we walked into the place , there are several motivations to visit again , and Yunnan is one of the biggest motivation ~\n \n        Two summers ago through Lijiang , Tiger Leaping Gorge and the lake , had a stunning unforgettable journey ~ the past two years has been to ponder when it would return to Yunnan , and finally this summer can be achieved ~"
+                        android:textSize="15sp"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="240dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/notes_02"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="        Lijiang, it remains our favorite cities , here air , scenery , culture, food , everything is love , there is always a settled here in the impulse ~\n \n        Because rain collapsed because of Lijiang , this trip did not hesitate ~ Although only two years ago came once , but to go everywhere in the city are still fresh in my memory , feeling never left , so I put this trip be understood as the last stroke sequel ~"
+                        android:textSize="15sp"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="240dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/notes_03"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="240dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/notes_04"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="        backpacker Xiaopeng inn, by himself and his team effort to build , opened in 2014 , is located in Shuhe ~ Here you can described as a top-level configuration version CYTS , luxury hotel area facilities , small park , youth hostel atmosphere ~ show a movie every day , weekly themed events held several times , the roof can look directly at the Jade Dragon Snow Mountain ~ here , even staying at home , but also a unique experience in the world ~"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

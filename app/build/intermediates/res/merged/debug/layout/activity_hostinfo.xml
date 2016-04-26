@@ -72,10 +72,9 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/hostinfo_hotelName"
+                        android:id="@+id/hostinfo_hotel_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="221b Baker Street"
                         android:textSize="25sp"
                         android:textColor="#ff4045"
                         android:paddingBottom="5dp"
@@ -83,36 +82,33 @@
                         android:fontFamily="arial" />
 
                     <TextView
-                        android:id="@+id/hostinfo_hotelLocation"
+                        android:id="@+id/hostinfo_hotel_location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Westminster, London, UK"
                         android:textSize="12sp"
                         android:textColor="#757575"
                         android:paddingLeft="8dp"
                         android:paddingBottom="8dp"
-                        android:layout_below="@id/hostinfo_hotelName"/>
+                        android:layout_below="@id/hostinfo_hotel_name"/>
 
                     <com.freego.view.CircleImageView
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="5dp"
-                        android:layout_marginTop="5dp"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:id="@+id/circleImageView"
-                        android:src="@drawable/homepage_beijing"
+                        android:src="@drawable/default_avatar"
                         app:border_width="4dp"
                         app:border_color="#ffffffff"
                         android:layout_alignParentTop="true" />
 
                     <TextView
-                        android:id="@+id/hostinfo_hotelIntro"
+                        android:id="@+id/hostinfo_hotel_intro"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="First Hotel in FreeGo Application."
                         android:textColor="#424242"
                         android:textSize="16sp"
-                        android:layout_below="@id/hostinfo_hotelLocation"
+                        android:layout_below="@id/hostinfo_hotel_location"
                         android:paddingLeft="8dp"
                         android:paddingBottom="18dp"/>
                 </RelativeLayout>
@@ -130,7 +126,7 @@
                     android:layout_marginBottom="16dp">
 
                     <TextView
-                        android:id="@+id/hostinfo_rec_wanted"
+                        android:id="@+id/hostinfo_wanted"
                         android:layout_width="155dp"
                         android:layout_height="wrap_content"
                         android:text="Wanted"
@@ -140,26 +136,33 @@
                         android:layout_marginLeft="12dp"
                         android:layout_marginBottom="10dp"/>
 
-                    <TextView
-                        android:id="@+id/hostinfo_rec_person"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="2  Girls"
-                        android:textColor="#ff4045"
-                        android:textSize="16sp"
-                        android:layout_below="@id/hostinfo_rec_wanted"
+                    <ImageView
+                        android:id="@+id/hostinfo_person_gender"
+                        android:layout_width="21dp"
+                        android:layout_height="21dp"
+                        android:src="@drawable/public_female_red"
+                        android:layout_below="@id/hostinfo_wanted"
                         android:layout_marginLeft="12dp"/>
 
                     <TextView
-                        android:id="@+id/hostinfo_basicinfo_between"
+                        android:id="@+id/hostinfo_person_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ff4045"
+                        android:textSize="16sp"
+                        android:layout_below="@id/hostinfo_wanted"
+                        android:layout_marginLeft="44dp"/>
+
+                    <TextView
+                        android:id="@+id/basicinfo_between"
                         android:layout_width="1.5dp"
                         android:layout_height="60dp"
                         android:background="#e0e0e0"
-                        android:layout_toRightOf="@id/hostinfo_rec_wanted"
+                        android:layout_toRightOf="@id/hostinfo_wanted"
                         android:layout_centerInParent="true"/>
 
                     <TextView
-                        android:id="@+id/hostinfo_rec_period"
+                        android:id="@+id/hostinfo_period"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Period"
@@ -168,30 +171,50 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginLeft="14dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_toRightOf="@id/hostinfo_basicinfo_between"/>
+                        android:layout_toRightOf="@id/basicinfo_between"/>
 
                     <TextView
-                        android:id="@+id/hostinfo_rec_periodEdit"
+                        android:id="@+id/hostinfo_periodEdit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="4 Weeks"
                         android:textColor="#666666"
                         android:textSize="16sp"
-                        android:layout_below="@id/hostinfo_rec_period"
-                        android:layout_toRightOf="@id/hostinfo_basicinfo_between"
+                        android:layout_below="@id/hostinfo_period"
+                        android:layout_toRightOf="@id/basicinfo_between"
                         android:layout_marginLeft="14dp" />
 
                     <TextView
-                        android:id="@+id/hostinfo_rec_startEdit"
+                        android:id="@+id/hostinfo_week"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="From 1864"
+                        android:text="Weeks"
                         android:textColor="#666666"
                         android:textSize="16sp"
-                        android:layout_below="@id/hostinfo_rec_period"
-                        android:layout_toRightOf="@id/hostinfo_basicinfo_between"
-                        android:layout_marginLeft="80dp" />
-               </RelativeLayout>
+                        android:layout_below="@id/hostinfo_period"
+                        android:layout_toRightOf="@id/basicinfo_between"
+                        android:layout_marginLeft="30dp" />
+
+                    <TextView
+                        android:id="@+id/hostinfo_from"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="From"
+                        android:textColor="#666666"
+                        android:textSize="16sp"
+                        android:layout_below="@id/hostinfo_period"
+                        android:layout_toRightOf="@id/basicinfo_between"
+                        android:layout_marginLeft="85dp" />
+
+                    <TextView
+                        android:id="@+id/hostinfo_startEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#666666"
+                        android:textSize="16sp"
+                        android:layout_below="@id/hostinfo_period"
+                        android:layout_toRightOf="@id/basicinfo_between"
+                        android:layout_marginLeft="125dp" />
+                </RelativeLayout>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -208,18 +231,21 @@
                     android:gravity="center">
 
                     <ImageView
+                        android:id="@+id/hostinfo_message"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:layout_weight="1"
                         android:src="@drawable/public_message" />
 
                     <ImageView
+                        android:id="@+id/hostinfo_phone"
                         android:layout_width="26dp"
                         android:layout_height="26dp"
                         android:layout_weight="1"
                         android:src="@drawable/public_call" />
 
                     <ImageView
+                        android:id="@+id/hostinfo_email"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:layout_weight="1"
@@ -233,7 +259,7 @@
                     android:layout_gravity="center"/>
 
                 <TextView
-                    android:id="@+id/hostinfo_rec_require"
+                    android:id="@+id/hostinfo_require"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Requirements"
@@ -243,17 +269,16 @@
                     android:layout_marginLeft="18dp"/>
 
                 <TextView
-                    android:id="@+id/hostinfo_rec_requireEdit"
+                    android:id="@+id/hostinfo_requireEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Self-care and responsible, cheerful and positive, humorous and caring of animals, respect and care about each other."
                     android:textSize="16sp"
                     android:layout_marginTop="18dp"
                     android:layout_marginBottom="18dp"
                     android:layout_marginLeft="18dp" />
 
                 <TextView
-                    android:id="@+id/hostinfo_rec_jobs"
+                    android:id="@+id/hostinfo_jobs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Jobs"
@@ -263,10 +288,9 @@
                     android:layout_marginLeft="18dp"/>
 
                 <TextView
-                    android:id="@+id/hostinfo_rec_jobsEdit"
+                    android:id="@+id/hostinfo_jobsEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Simple housework like receive guests and clear houses, water flower and walk dog, help to prepare parties and BBQs."
                     android:textSize="16sp"
                     android:layout_marginTop="18dp"
                     android:layout_marginBottom="18dp"
@@ -279,7 +303,7 @@
                     android:layout_gravity="center"/>
 
                 <TextView
-                    android:id="@+id/hostinfo_rec_provide"
+                    android:id="@+id/hostinfo_provide"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Supplement"
@@ -289,17 +313,16 @@
                     android:layout_marginLeft="18dp"/>
 
                 <TextView
-                    android:id="@+id/hostinfo_rec_provideEdit"
+                    android:id="@+id/hostinfo_provideEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Two of you share a clean room with comfortable beds and a place for reading, dilicious foods, special route of this place."
                     android:textSize="16sp"
                     android:layout_marginTop="18dp"
                     android:layout_marginBottom="18dp"
                     android:layout_marginLeft="18dp"/>
 
                 <TextView
-                    android:id="@+id/hostinfo_rec_experiences"
+                    android:id="@+id/hostinfo_experiences"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Experiences"
@@ -309,10 +332,9 @@
                     android:layout_marginLeft="18dp"/>
 
                 <TextView
-                    android:id="@+id/hostinfo_rec_experiencesEdit"
+                    android:id="@+id/hostinfo_experiencesEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Outdoor camera and swimming, parties and BBQs, marvellous outdoor activities like hiking camping and climbing."
                     android:textSize="16sp"
                     android:layout_marginTop="18dp"
                     android:layout_marginBottom="18dp"

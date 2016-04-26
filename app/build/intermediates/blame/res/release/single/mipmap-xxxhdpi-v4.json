@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/release/mipmap-xxxhdpi-v4/ic_launcher.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/build/intermediates/res/merged/release/mipmap-xxxhdpi-v4/freego_logo.png",
+        "source": "/Users/dan/AndroidStudioProjects/FreeGo_client/app/src/main/res/mipmap-xxxhdpi/freego_logo.png"
+    }
+]

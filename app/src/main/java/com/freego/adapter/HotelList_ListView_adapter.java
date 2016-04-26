@@ -1,7 +1,6 @@
 package com.freego.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -135,25 +134,18 @@ public class HotelList_ListView_adapter extends BaseAdapter {
             filterdList = new ArrayList<ImageHotel>();
             myList = convertList;
 
-            String startTime = info.substring(3,7);
-            String endTime = info.substring(9,13);
+            String startTime = info.substring(1,5);
+            String endTime = info.substring(5,9);
             String gender = info.substring(0, 1);
-            String week = info.substring(13, info.length());
+            String week = info.substring(9, info.length());
             String weekStart = "0";
             String weekEnd = "0";
-            Log.d("st", startTime);
-            Log.d("et", endTime);
-            Log.d("gd", gender);
-            Log.d("week", week);
-            Log.d("ws", weekStart);
-
 
             if(!week.equals("0")) {
 
                 String[] weeks = week.split("0");
                 weekStart = weeks[0];
                 weekEnd = weeks[1];
-                Log.d("---------", weekStart);
             }
             filterHotel(weekStart, weekEnd, gender, startTime, endTime, filterdList, myList);
             results.values = filterdList;
@@ -180,7 +172,6 @@ public class HotelList_ListView_adapter extends BaseAdapter {
         int endTime = Integer.parseInt(time2);
 
         if (gender == 0 & weekStart != 0 & startTime != 0) {
-            Log.d("ENTER-----1", "-------");
             for (int i = 0; i < filter.size(); i++) {
                 if (weekStart < filter.get(i).getWeek() & filter.get(i).getWeek() < weekEnd) {
                     if (startTime < filter.get(i).getTimeStart() & filter.get(i).getTimeStart() < endTime) {
@@ -189,7 +180,6 @@ public class HotelList_ListView_adapter extends BaseAdapter {
                 }
             }
         } else if (gender != 0 & weekStart == 0 & startTime != 0) {
-            Log.d("ENTER-----2", "-------");
             for (int i = 0; i < filter.size(); i++) {
                 if (gender == filter.get(i).getGender()) {
                     if (startTime < filter.get(i).getTimeStart() & filter.get(i).getTimeStart() < endTime) {
@@ -198,7 +188,6 @@ public class HotelList_ListView_adapter extends BaseAdapter {
                 }
             }
         } else if (gender != 0 & weekStart != 0 & startTime == 0) {
-            Log.d("ENTER-----3", "-------");
             for (int i = 0; i < filter.size(); i++) {
                 if (weekStart < filter.get(i).getWeek() & filter.get(i).getWeek() < weekEnd) {
                     if (startTime < filter.get(i).getTimeStart() & filter.get(i).getTimeStart() < endTime) {
@@ -218,5 +207,4 @@ public class HotelList_ListView_adapter extends BaseAdapter {
             }
         }
     }
-
 }

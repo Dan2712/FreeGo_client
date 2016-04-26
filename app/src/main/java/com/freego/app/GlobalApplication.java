@@ -14,6 +14,16 @@ public class GlobalApplication extends Application {
 
     private static boolean isPressed = false;
 
+    public static boolean isMsg_flag() {
+        return msg_flag;
+    }
+
+    public static void setMsg_flag(boolean msg_flag) {
+        GlobalApplication.msg_flag = msg_flag;
+    }
+
+    private static boolean msg_flag = false;
+
     public static Context getContext() {
         return context;
     }
